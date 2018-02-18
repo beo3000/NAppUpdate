@@ -446,7 +446,7 @@ namespace NAppUpdate.Framework
 
 						var info = new ProcessStartInfo
 									{
-										UseShellExecute = true,
+										UseShellExecute = false, //true,
 										WorkingDirectory = Environment.CurrentDirectory,
 										FileName = Path.Combine(Config.TempFolder, Instance.Config.UpdateExecutableName),
 										Arguments =
@@ -454,8 +454,9 @@ namespace NAppUpdate.Framework
 														  updaterShowConsole ? "-showConsole" : string.Empty,
 														  updaterDoLogging ? "-log" : string.Empty),
 									};
+                        //info.UseShellExecute
 
-						if (!updaterShowConsole)
+                        if (!updaterShowConsole)
 						{
 							info.WindowStyle = ProcessWindowStyle.Hidden;
 							info.CreateNoWindow = true;

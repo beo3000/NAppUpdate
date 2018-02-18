@@ -42,8 +42,8 @@ namespace NAppUpdate.Framework.Sources
 		{
 			string data = File.ReadAllText(FeedUncPath, Encoding.UTF8);
 
-			if (data.StartsWith(_byteOrderMarkUtf8))
-				data = data.Remove(0, _byteOrderMarkUtf8.Length);
+			//if (data.StartsWith(_byteOrderMarkUtf8))
+			//	data = data.Remove(0, _byteOrderMarkUtf8.Length);
 
 			return data;
 		}
